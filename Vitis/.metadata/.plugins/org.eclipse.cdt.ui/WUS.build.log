@@ -1,0 +1,29 @@
+11:25:41 **** Build of configuration Debug for project WUS ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/baolin/Desktop/MyProjects/zynq_prj/WUS/Vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:40:3: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+   40 |   sleep(1);
+      |   ^~~~~
+'Finished building: ../main.c'
+' '
+'Building target: WUS.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/baolin/Desktop/MyProjects/zynq_prj/WUS/Vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "WUS.elf"  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: WUS.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size WUS.elf  |tee "WUS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29168	   1152	  22616	  52936	   cec8	WUS.elf
+'Finished building: WUS.elf.size'
+' '
+
+11:25:42 Build Finished (took 1s.249ms)
+
